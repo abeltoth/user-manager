@@ -44,8 +44,10 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((data) => {
-      this.userForm.patchValue(data.user);
-      this.id = data.user.id;
+      if (data.user) {
+        this.userForm.patchValue(data.user);
+        this.id = data.user.id;
+      }
     });
   }
 

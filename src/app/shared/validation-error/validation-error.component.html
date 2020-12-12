@@ -1,18 +1,18 @@
-<div *ngIf="control.touched && control.invalid && control.errors">
+<div *ngIf="control && control.touched && control.invalid && control.errors">
   <span *ngIf="control.errors.required">Required field</span>
 </div>
-<div *ngIf="control.touched && control.invalid && control.errors">
+<div *ngIf="control && control.touched && control.invalid && control.errors">
   <span *ngIf="control.errors.email">Not valid email format</span>
 </div>
-<div *ngIf="control.touched && control.invalid && control.errors">
+<div *ngIf="control && control.touched && control.invalid && control.errors">
   <span *ngIf="control.errors.min">{{ 'Minimum value: ' + control.errors.min['min'] }}</span>
 </div>
-<div *ngIf="control.touched && control.invalid && control.errors">
+<div *ngIf="control && control.touched && control.invalid && control.errors">
   <span *ngIf="control.errors.max">{{ 'Maximum value: ' + control.errors.max['max'] }}</span>
 </div>
-<div *ngIf="control.touched && control.invalid && control.errors">
+<div *ngIf="control && control.touched && control.invalid && control.errors">
   <span *ngIf="control.errors.maxlength">{{ 'Maximum length: ' + control.errors.maxlength['requiredLength'] }}</span>
 </div>
-<div *ngIf="control.touched && control.invalid && control.errors">
+<div *ngIf="control && control.touched && control.invalid && control.errors">
   <span *ngIf="control.errors['custom.phone']">Not valid phone format</span>
 </div>
