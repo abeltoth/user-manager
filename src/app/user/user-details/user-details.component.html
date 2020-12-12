@@ -1,1 +1,152 @@
-<p>user-details works!</p>
+<form class="user-form" [formGroup]="userForm">
+
+  <!--name-->
+  <div>
+    <label for="name">Name</label>
+    <input
+      id="name"
+      formControlName="name"
+      type="text">
+  </div>
+  <app-validation-error [control]="userForm.get('name')"></app-validation-error>
+
+  <!--email-->
+  <div>
+    <label for="email">Email</label>
+    <input
+      id="email"
+      formControlName="email"
+      type="text">
+  </div>
+  <app-validation-error [control]="userForm.get('email')"></app-validation-error>
+
+  <!--address-->
+  <div formGroupName="address">
+    <label for="address">Address</label>
+
+    <!--street-->
+    <div>
+      <label for="street">Street</label>
+      <input
+        id="street"
+        formControlName="street"
+        type="text">
+    </div>
+    <app-validation-error [control]="userForm.get('address.street')"></app-validation-error>
+
+    <!--suite-->
+    <div>
+      <label for="suite">Suite</label>
+      <input
+        id="suite"
+        formControlName="suite"
+        type="text">
+    </div>
+    <app-validation-error [control]="userForm.get('address.suite')"></app-validation-error>
+
+    <!--city-->
+    <div>
+      <label for="city">City</label>
+      <input
+        id="city"
+        formControlName="city"
+        type="text">
+    </div>
+    <app-validation-error [control]="userForm.get('address.city')"></app-validation-error>
+
+    <!--zipcode-->
+    <div>
+      <label for="zipcode">Zipcode</label>
+      <input
+        id="zipcode"
+        formControlName="zipcode"
+        type="text">
+    </div>
+    <app-validation-error [control]="userForm.get('address.zipcode')"></app-validation-error>
+
+    <!-- geo -->
+    <div formGroupName="geo">
+      <label for="geo">Geo</label>
+
+      <!--lat-->
+      <div>
+        <label for="lat">lat</label>
+        <input
+          id="lat"
+          formControlName="lat"
+          type="number">
+      </div>
+      <app-validation-error [control]="userForm.get('address.geo.lat')"></app-validation-error>
+
+      <!--lng-->
+      <div>
+        <label for="lng">lng</label>
+        <input
+          id="lng"
+          formControlName="lng"
+          type="number">
+      </div>
+      <app-validation-error [control]="userForm.get('address.geo.lng')"></app-validation-error>
+    </div>
+  </div>
+
+  <!--phone-->
+  <div>
+    <label for="phone">Phone</label>
+    <input
+      id="phone"
+      formControlName="phone"
+      type="text">
+  </div>
+  <app-validation-error [control]="userForm.get('phone')"></app-validation-error>
+
+  <!--website-->
+  <div>
+    <label for="website">Website</label>
+    <input
+      id="website"
+      formControlName="website"
+      type="text">
+  </div>
+  <app-validation-error [control]="userForm.get('website')"></app-validation-error>
+
+  <!--company-->
+  <div formGroupName="company">
+    <label for="company">Company</label>
+
+    <!--companyName-->
+    <div>
+      <label for="companyName">Company name</label>
+      <input
+        id="company-name"
+        formControlName="name"
+        type="text">
+    </div>
+    <app-validation-error [control]="userForm.get('company.name')"></app-validation-error>
+
+    <!--companyCatchPhrase-->
+    <div>
+      <label for="companyCatchPhrase">Company catch phrase</label>
+      <input
+        id="company-catch-phrase"
+        formControlName="catchPhrase"
+        type="text">
+    </div>
+    <app-validation-error [control]="userForm.get('company.catchPhrase')"></app-validation-error>
+
+    <!--companyBs-->
+    <div>
+      <label for="companyBs">Company bs</label>
+      <input
+        id="company-bs"
+        formControlName="bs"
+        type="text">
+    </div>
+    <app-validation-error [control]="userForm.get('company.bs')"></app-validation-error>
+  </div>
+
+</form>
+
+<div class="save-button" (click)="saveUser()">Save</div>
+<div *ngIf="id" class="delete-button" (click)="deleteUser()">Delete</div>
+<div class="cancel-button" (click)="navigateToListPage()">Cancel</div>

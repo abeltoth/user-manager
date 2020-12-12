@@ -10,14 +10,14 @@ const routes: Routes = [
     path: '',
     component: UserListComponent,
     resolve: {
-      User: UserListResolver
+      userList: UserListResolver
     }
   },
   {
     path: ':id',
     component: UserDetailsComponent,
     resolve: {
-      User: UserDetailsResolver
+      user: UserDetailsResolver
     }
   },
   {

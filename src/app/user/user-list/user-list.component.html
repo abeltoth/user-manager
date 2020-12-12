@@ -1,1 +1,5 @@
-<p>user-list works!</p>
+<div *ngFor="let user of userList" class="user-list-element" (click)="navigateToDetailsPage(user.id)">
+  {{ user.name }}
+</div>
+
+<div class="add-button" (click)="addNewUser()">Add new user</div>

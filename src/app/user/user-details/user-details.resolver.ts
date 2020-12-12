@@ -4,7 +4,7 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { User } from 'src/app/shared/types';
 
@@ -19,6 +19,10 @@ export class UserDetailsResolver implements Resolve<User> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> {
     const id = route.params.id;
-    return this.apiService.get(`/users/${id}`);
+    if (id === 'new-user') {
+      return of({} as User);
+    } else {
+      return this.apiService.get(`/users/${id}`);
+    }
   }
 }
