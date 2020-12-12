@@ -11,13 +11,13 @@ import { User } from 'src/app/shared/types';
 @Injectable({
   providedIn: 'root'
 })
-export class UserListResolver implements Resolve<User> {
+export class UserListResolver implements Resolve<User[]> {
 
   constructor(
     private apiService: ApiService
   ) { }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User[]> {
     return this.apiService.get('/users');
   }
 }

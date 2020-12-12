@@ -2,7 +2,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { CustomValidators } from 'src/app/shared/validators';
+import { User } from 'src/app/shared/types';
 
 @Component({
   selector: 'app-user-details',
@@ -15,6 +15,7 @@ export class UserDetailsComponent implements OnInit {
 
   userForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.maxLength(100)]],
+    username: ['', [Validators.required, Validators.maxLength(100)]],
     email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
     address: this.formBuilder.group({
       street: ['', [Validators.required, Validators.maxLength(100)]],
@@ -26,7 +27,7 @@ export class UserDetailsComponent implements OnInit {
         lng: ['', [Validators.required, Validators.min(-180), Validators.max(180)]],
       }),
     }),
-    phone: ['', [Validators.required, Validators.maxLength(100), CustomValidators.phone]],
+    phone: ['', [Validators.required, Validators.maxLength(100)]],
     website: ['', [Validators.required, Validators.maxLength(100)]],
     company: this.formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(100)]],
@@ -54,7 +55,7 @@ export class UserDetailsComponent implements OnInit {
   saveUser(): void {
     this.userForm.markAllAsTouched();
     if (this.userForm.valid) {
-      const body = this.userForm.value;
+      const body: User = this.userForm.value;
 
       if (this.id) {
         this.apiService.put(`/users/${this.id}`, body)
