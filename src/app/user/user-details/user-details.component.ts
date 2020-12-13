@@ -11,7 +11,7 @@ import { User } from 'src/app/shared/types';
 })
 export class UserDetailsComponent implements OnInit {
 
-  id: string;
+  id: number;
 
   userForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.maxLength(100)]],
@@ -84,7 +84,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   navigateToListPage(): void {
-    this.router.navigate(['../'], { relativeTo: this.activatedRoute });
+    this.router.navigateByUrl('/users');
   }
 
 }

@@ -17,7 +17,7 @@ export class UserDetailsResolver implements Resolve<User> {
     private apiService: ApiService
   ) { }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> {
+  resolve(route: ActivatedRouteSnapshot, state?: RouterStateSnapshot): Observable<User> {
     const id = route.params.id;
     if (id === 'new-user') {
       return of({} as User);

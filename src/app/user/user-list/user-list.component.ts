@@ -23,11 +23,11 @@ export class UserListComponent implements OnInit {
   }
 
   navigateToDetailsPage(id: number): void {
-    this.router.navigate([`${id.toString()}`], {relativeTo: this.activatedRoute});
+    this.router.navigateByUrl(`/users/${id.toString()}`);
   }
 
   addNewUser(): void {
-    this.router.navigate(['new-user'], { relativeTo: this.activatedRoute });
+    this.router.navigateByUrl('/users/new-user');
   }
 
 }

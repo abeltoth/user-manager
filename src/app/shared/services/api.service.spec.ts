@@ -75,4 +75,9 @@ describe('ApiService', () => {
     req.flush(null);
   });
 
+
+  afterEach(() => {
+    httpTestingController.verify();
+  });
+
 });

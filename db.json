@@ -93,7 +93,6 @@
       "id": 4
     },
     {
-      "id": 5,
       "name": "Chelsey Dietrich",
       "username": "Kamren",
       "email": "Lucio_Hettinger@annie.ca",
@@ -113,7 +112,8 @@
         "name": "Keebler LLC",
         "catchPhrase": "User-centric fault-tolerant solution",
         "bs": "revolutionize end-to-end systems"
-      }
+      },
+      "id": 5
     },
     {
       "id": 6,
@@ -139,7 +139,6 @@
       }
     },
     {
-      "id": 7,
       "name": "Kurtis Weissnat",
       "username": "Elwyn.Skiles",
       "email": "Telly.Hoeger@billy.biz",
@@ -159,7 +158,8 @@
         "name": "Johns Group",
         "catchPhrase": "Configurable multimedia task-force",
         "bs": "generate enterprise e-tailers"
-      }
+      },
+      "id": 7
     },
     {
       "id": 8,
