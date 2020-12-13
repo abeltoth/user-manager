@@ -54,7 +54,7 @@ describe('UserListComponent', () => {
     component.userList[0].id = 250;
     fixture.detectChanges();
 
-    const user = el.query(By.css(".user-list-element"));
+    const user = el.query(By.css(".user-name-text"));
     click(user);
 
     fixture.detectChanges();

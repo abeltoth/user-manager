@@ -1,7 +1,102 @@
+@import "~src/variables";
+
+.user-details-container {
+  padding: 8px;
+  max-width: 1120px;
+  margin: auto;
+  text-align: center;
+}
+
+.user-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(0, min-content));
+  gap: 16px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-bottom: -20px;
+  margin-top: 20px;
+}
+
+.company-container {
+  display: grid;
+  gap: 16px;
+}
+
+.address-container {
+  display: grid;
+  gap: 16px;
+}
+
+.geo-container {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.geo-container .subtitle {
+  grid-column-start: span 2;
+}
+
+/* Buttons */
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
 .save-button,
 .cancel-button,
 .delete-button {
-  height: 20px;
-  width: 40px;
-  border: 1px solid black;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%   {top: 0;}
+  40%  {top: -10px;}
+  80%  {top: 3px;}
+  100% {top: 0;}
+}
+
+.save-button .material-icons {
+  font-size: 3em;
+  position: relative;
+  transition: color .4s ease;
+  &:hover {
+    color: $lightgreen;
+    animation-name: bounce;
+    animation-duration: .4s;
+  }
+}
+
+.delete-button .material-icons {
+  font-size: 3em;
+  transition: color .4s ease;
+  &:hover {
+    color: $red;
+  }
+}
+
+@keyframes back {
+  0%   {left: 0;}
+  50%  {left: -10px;}
+  100% {left: 0;}
+}
+
+.cancel-button .material-icons {
+  font-size: 3em;
+  position: relative;
+  transition: color .4s ease;
+  &:hover {
+    color: $purple;
+    animation-name: back;
+    animation-duration: .4s;
+  }
 }

@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+body {
+  color: $white;
+  font-family: $fontLangar;
+  background: linear-gradient(135deg, $green, $purple);
+  outline-color: $yellow !important;
+  min-height: 100vh;
+  font-size: 20px;
+  margin: 0;
+}
+
+::selection {
+  background: $yellow;
+}
+
+::-moz-selection {
+  background: $yellow;
+}
+
+label {
+  font-size: 16px;
+  text-align: left;
+}
+
+input {
+  font-family: $fontLangar;
+  height: 32px;
+  line-height: 1.2em;
+  font-size: 16px;
+  border-radius: 8px;
+}

@@ -1,5 +1,31 @@
+@import "~src/variables";
+
+.user-list-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.user-name-text {
+  cursor: pointer;
+  transition: background-size .4s ease;
+  background: linear-gradient(to bottom, transparent 0, $purple 0) center center/0% 75% no-repeat;
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
+
 .add-button {
-  height: 20px;
-  width: 40px;
-  border: 1px solid black;
+  cursor: pointer;
+}
+
+.add-button .material-icons {
+  font-size: 3em;
+  transition: color .4s ease, transform .4s ease;
+  &:hover {
+    color: $purple;
+    transform: rotate(90deg);
+  }
 }
