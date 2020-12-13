@@ -2,7 +2,7 @@
 
 .user-details-container {
   padding: 8px;
-  max-width: 1120px;
+  max-width: 1024px;
   margin: auto;
   text-align: center;
 }
@@ -45,10 +45,9 @@
   grid-column-start: span 2;
 }
 
-/* Buttons */
-
 .action-buttons {
   display: flex;
+  margin-top: 20px;
   justify-content: space-around;
 }
 
@@ -98,5 +97,20 @@
     color: $purple;
     animation-name: back;
     animation-duration: .4s;
+  }
+}
+
+@media(min-width:768px) {
+  .user-form,
+  .address-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .geo-container,
+  .company-container,
+  .address-container,
+  .input-container.website,
+  .address-container .subtitle {
+    grid-column-start: span 2;
   }
 }

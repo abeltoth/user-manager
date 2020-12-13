@@ -1,7 +1,10 @@
+@import "~src/variables";
+
 :host {
   display: block;
-  color: red;
-  font-size: 1.2rem;
+  color: $red;
+  font-size: 0.8rem;
   margin-top: 5px;
   margin-bottom: -5px;
+  text-align: left;
 }

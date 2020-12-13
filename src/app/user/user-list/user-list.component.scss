@@ -3,9 +3,16 @@
 .user-list-container {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 1024px;
   margin: auto;
   text-align: center;
+  padding: 8px;
+}
+
+.user-list-element {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .user-name-text {

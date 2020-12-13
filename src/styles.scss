@@ -1,5 +1,12 @@
 @import "variables";
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   color: $white;
   font-family: $fontLangar;
@@ -29,4 +36,5 @@ input {
   line-height: 1.2em;
   font-size: 16px;
   border-radius: 8px;
+  width: 100%;
 }
